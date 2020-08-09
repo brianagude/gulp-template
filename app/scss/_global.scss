@@ -1,0 +1,18 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 20px;
+  color: $black;
+  background-color: $gray-light;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.3;
+}

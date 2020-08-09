@@ -1,0 +1,31 @@
+{
+  "name": "gulp-template",
+  "version": "1.0.0",
+  "description": "template for gulp projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brianagude/gulp-template.git"
+  },
+  "author": "briana gude",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brianagude/gulp-template/issues"
+  },
+  "homepage": "https://github.com/brianagude/gulp-template#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "browser-sync": "^2.26.12",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "node-sass": "^4.14.1"
+  }
+}

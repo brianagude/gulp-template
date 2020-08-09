@@ -1,0 +1,70 @@
+// screen widths -----------------------------------------------------------------------------------------------------
+$screen-xs-min: 360px !default;
+$screen-sm-min: 768px !default;
+$screen-md-min: 1024px !default;
+$screen-lg-min: 1280px !default;
+$screen-xl-min: 1440px !default;
+$screen-xxl-min: 1920px !default;
+
+// breakpoints -----------------------------------------------------------------------------------------------------
+@mixin breakpoint($screenWidth) {
+  @if $screenWidth==mobile-only {
+    @media (max-width: #{$screen-xs-min - 1}) {
+      @content;
+    }
+  }
+
+  @else if $screenWidth==small-only {
+    @media (max-width: #{$screen-sm-min - 1}) {
+      @content;
+    }
+  }
+
+  @else if $screenWidth==tablet-only {
+    @media (min-width: #{$screen-sm-min}) and (max-width: #{$screen-md-min - 1}) {
+      @content;
+    }
+  }
+
+  @else if $screenWidth==xs {
+    @media (min-width: #{$screen-xs-min}) {
+      @content;
+    }
+  }
+
+  @else if $screenWidth==sm {
+    @media (min-width: #{$screen-sm-min}) {
+      @content;
+    }
+  }
+
+  @else if $screenWidth==md {
+    @media (min-width: #{$screen-md-min}) {
+      @content;
+    }
+  }
+
+  @else if $screenWidth==lg {
+    @media (min-width: #{$screen-lg-min}) {
+      @content;
+    }
+  }
+
+  @else if $screenWidth==xl {
+    @media (min-width: #{$screen-xl-min}) {
+      @content;
+    }
+  }
+
+  @else if $screenWidth==xxl {
+    @media (min-width: #{$screen-xxl-min}) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: mobile-only, small-only, tablet-only, xs, sm, md, lg, xl, xxl";
+  }
+}
+
+// helpers -----------------------------------------------------------------------------------------------------
