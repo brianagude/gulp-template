@@ -7,7 +7,7 @@ $screen-xl-min: 1440px !default;
 $screen-xxl-min: 1920px !default;
 
 // breakpoints -----------------------------------------------------------------------------------------------------
-@mixin breakpoint($screenWidth) {
+@mixin bp($screenWidth) {
   @if $screenWidth==mobile-only {
     @media (max-width: #{$screen-xs-min - 1}) {
       @content;
@@ -68,3 +68,5 @@ $screen-xxl-min: 1920px !default;
 }
 
 // helpers -----------------------------------------------------------------------------------------------------
+
+$base-unit: 16px; 

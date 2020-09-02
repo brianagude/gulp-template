@@ -6,8 +6,6 @@ var gulp = require("gulp"),
   autoprefixer = require("autoprefixer"),
   cssnano = require("cssnano"),
   sourcemaps = require("gulp-sourcemaps"),
-  concat = require('gulp-concat'),
-  uglify = require('gulp-uglify-es').default,
   browserSync = require("browser-sync").create();
 
 sass.compiler = require('node-sass');
@@ -33,37 +31,31 @@ function style() {
     .pipe(browserSync.stream({ match: '**/*.css' }));
 }
 
-function scripts() {
-  return gulp
-    .src(files.js)
-    .pipe(concat('all.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('app/js')
-    );
-}
-
 function reload() {
   browserSync.reload();
 }
 
 function watch() {
   browserSync.init({
+    open: false,
     server: {
-      baseDir: "app"
+      baseDir: "app",
+      serveStaticOptions: {
+        extensions: ["html"]
+      }
     },
 
     open: false
   });
 
   gulp.watch(files.scss).on('change', style);
-  gulp.watch("app/*.html").on('change', reload);
+  gulp.watch("app/*").on('change', reload);
 }
 
 exports.watch = watch
 exports.style = style;
-exports.scripts = scripts;
 
-var build = gulp.parallel(style, scripts, watch);
+var build = gulp.parallel(style, watch);
 
 gulp.task('build', build);
 gulp.task('default', build);

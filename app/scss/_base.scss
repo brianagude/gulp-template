@@ -113,6 +113,13 @@ body {
   overflow-x: hidden;
 }
 
+button {
+  background: none;
+  border: none; 
+  box-shadow: none; 
+  cursor: pointer;
+}
+
 ol,
 ul {
   list-style: none;
@@ -138,9 +145,23 @@ table {
 
 * {
 
+  padding: 0;
+  margin: 0;
+
   &,
   &:before,
   &:after {
     box-sizing: border-box;
   }
 }
+
+img, iframe {
+  vertical-align: bottom;
+  max-width: 100%;
+}
+
+a {
+  display: inline-block;
+}
+
+div { width: 100%; }
